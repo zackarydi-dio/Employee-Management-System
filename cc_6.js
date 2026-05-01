@@ -35,6 +35,16 @@ class Company {
             console.log(emp.describe());
         });
     }
+
+    displayEmployees() {
+        const output = document.getElementById("output");
+        let html = "<h2>Employee List:</h2><ul>";
+        this.employees.forEach(emp => {
+            html += `<li>${emp.describe()}</li>`;
+        });
+        html += "</ul>";
+        output.innerHTML = html;
+    }
 }
 
 const employee1 = new Employee("Alice Johnson", "HR");
@@ -48,3 +58,4 @@ company.addEmployee(employee2);
 company.addEmployee(manager1);
 
 company.listEmployees();
+company.displayEmployees();
