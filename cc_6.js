@@ -1,3 +1,6 @@
+// Employee Management System
+// This script demonstrates object-oriented design using ES6 classes and renders results in the browser.
+
 class Employee {
     constructor(name, department) {
         this.name = name;
@@ -30,32 +33,36 @@ class Company {
     }
 
     listEmployees() {
-        console.log("Company Employee List:");
-        this.employees.forEach(emp => {
-            console.log(emp.describe());
+        console.log('Company Employee List:');
+        this.employees.forEach(employee => {
+            console.log(employee.describe());
         });
     }
 
-    displayEmployees() {
-        const output = document.getElementById("output");
-        let html = "<h2>Employee List:</h2><ul>";
-        this.employees.forEach(emp => {
-            html += `<li>${emp.describe()}</li>`;
-        });
-        html += "</ul>";
-        output.innerHTML = html;
+    renderEmployeeList() {
+        const outputElement = document.getElementById('output');
+        if (!outputElement) {
+            console.warn('No output container found. Employee list will not be rendered in the page.');
+            return;
+        }
+
+        const listItems = this.employees
+            .map(employee => `<li>${employee.describe()}</li>`)
+            .join('');
+
+        outputElement.innerHTML = `
+            <section>
+                <h2>Employee List</h2>
+                <ul>${listItems}</ul>
+            </section>
+        `;
     }
 }
 
-const employee1 = new Employee("Alice Johnson", "HR");
-const employee2 = new Employee("Brian Smith", "IT");
-const manager1 = new Manager("Carol Williams", "Engineering", 5);
-
 const company = new Company();
-
-company.addEmployee(employee1);
-company.addEmployee(employee2);
-company.addEmployee(manager1);
+company.addEmployee(new Employee('Alice Johnson', 'HR'));
+company.addEmployee(new Employee('Brian Smith', 'IT'));
+company.addEmployee(new Manager('Carol Williams', 'Engineering', 5));
 
 company.listEmployees();
-company.displayEmployees();
+company.renderEmployeeList();

@@ -1,45 +1,46 @@
-## Employee Management System
+# Employee Management System
 
-A small JavaScript application demonstrating object-oriented programming principles by modeling employees, managers, and a company structure.
+A polished JavaScript demo project that models employees, managers, and company structure using object-oriented design. The application renders employee data in the browser and logs the same results to the console.
 
-### Features
+## Project Overview
 
-- Defines a reusable `Employee` class for general staff members
-- Extends `Employee` with a `Manager` class to represent leaders with team size information
-- Uses a `Company` class to manage a collection of employees
-- Supports both console output and browser-based rendering
+This project features:
 
-### Project Structure
+- `Employee` class for general staff members
+- `Manager` subclass with supervisor-specific details
+- `Company` class to manage and render a list of employees
+- Browser-based output plus console logging for easy validation
 
-- `index.html` - Simple web page that loads the application and renders employee information
-- `cc_6.js` - Core JavaScript implementation for the employee management system
-- `README.md` - Project overview and usage instructions
+## Technologies Used
 
-### How It Works
+- HTML
+- CSS
+- JavaScript (ES6 classes)
 
-The application creates sample data for two employees and one manager, then adds them to a company instance. The company:
+## How to Run
 
-- logs each employee description to the browser console
-- renders a formatted employee list into the HTML page
+1. Open `index.html` in a modern web browser.
+2. The employee list appears inside the page under the project heading.
+3. Open the browser developer console to view the same employee summaries.
 
-### Usage
+> Tip: For local development, you can also serve this folder from a simple HTTP server if preferred.
 
-1. Open `index.html` in a web browser.
-2. The employee list will be displayed directly on the page.
-3. Open the browser console to review the same employee descriptions.
+## What I Learned
 
-### Classes
+- How to design and implement reusable JavaScript classes.
+- How to extend classes using inheritance and override methods.
+- How to safely manipulate the DOM and render dynamic content.
+- How to organize a small project for clarity and presentation.
 
-- `Employee`
-  - Properties: `name`, `department`
-  - Method: `describe()` returns a text summary of the employee
-- `Manager` extends `Employee`
-  - Additional property: `teamSize`
-  - Overrides `describe()` with manager-specific details
-- `Company`
-  - Stores an array of employees
-  - Methods: `addEmployee()`, `listEmployees()`, `displayEmployees()`
+## File Structure
 
-### Notes
+- `index.html` — page layout and style container
+- `cc_6.js` — object models and rendering logic
+- `README.md` — project documentation and instructions
 
-This project is intended as a learning exercise for object-oriented design in JavaScript and can be extended to include additional roles, user input, or persistence.
+## Improvements Made
+
+- Added a browser output container to prevent runtime errors
+- Cleaned up code formatting and comments
+- Added simple page styling for a professional look
+- Improved README with clearer run instructions and learnings
